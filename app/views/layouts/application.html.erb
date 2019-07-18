@@ -35,7 +35,13 @@
           <div class = "navbar-item has-dropdown is-hoverable">
             <a class = "navbar-link">Menu</a>
             <div class = "navbar-dropdown">
-              <a class = "navbar-item">Profile</a>
+              <a class = "navbar-item">
+                <%= link_to "Profile", edit_user_registration_path %>
+              </a>
+              <a class = "navbar-item">
+                <%= link_to "Sign In", new_user_registration_path %>
+              </a>
+              <hr class="dropdown-divider">
               <a class = "navbar-item">Sign Out</a>
             </div>
           </div>
