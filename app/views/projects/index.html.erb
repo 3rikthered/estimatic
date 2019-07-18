@@ -11,17 +11,53 @@
   </thead>
 
   <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.project %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Project', new_project_path %>
+    <div class= "columns is-variable is-0">
+      <div>
+        <div class="sidebar sidebar-padding-x has-background-dark">
+          <div class = "menu-wrapper sidebar-padding-y">
+            <aside class="menu">
+              <p class="menu-label is-size-4">
+                Erik Nelson
+              </p>
+              <p class="menu-label is-size-6">Projects</p>
+              <p class="menu-label">My Projects</p>
+              <ul class="menu-list">
+                <% @projects.each do |project| %>
+                <li>
+                  <div class = "dropdown is-hoverable">
+                    <div class = "dropdown-trigger">
+                      <button class = "button is-dark has-text-success">
+                        <span><%= project.project %></span>
+                      </button>
+
+                    </div>
+                    <div class = "dropdown-menu">
+                      <div class = "dropdown-content">
+                        <a class = "dropdown-item"><%= link_to 'Show', project %></a>
+                        <a class = "dropdown-item"><%= link_to 'Edit', edit_project_path(project) %></a>
+                        <hr class="dropdown-divider">
+                        <a class = "dropdown-item"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <% end %>
+                <li>
+                  <button class = "button is-success">
+                    <span><%= link_to 'New Project', new_project_path %></span>
+                  </button>
+                </li>
+              </ul>
+              <p class="menu-label">Other Projects</p>
+              <ul class="menu-list">
+                <li><a>Project 1</a></li>
+                <li><a>Project 2</a></li>
+                <li><a>Project 3</a></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>

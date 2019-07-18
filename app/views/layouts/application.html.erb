@@ -22,22 +22,29 @@
       </div>
     <% end %>
 
-    <nav class="navbar is-success is-fixed-bottom"
-      <div class="navbar-brand">
-        <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class = "title is-4">estima.tic</h1>
-        <% end %>
+<!-- NAVBAR -->
 
-        <div class = "navbar-burger burger" data-target = "navbarExample">
-          <span></span>
-          <span></span>
-          <span></span>
+    <nav class="navbar is-success is-fixed-top has-box-shadow"
+
+      <div class = "navbar-brand">
+        <a href = "#" class = "navbar-item is-size-4 has-text-white">estima.tic</a>
+      </div>
+
+      <div class = "navbar-menu">
+        <div class = "navbar-end">
+          <div class = "navbar-item has-dropdown is-hoverable">
+            <a class = "navbar-link">Menu</a>
+            <div class = "navbar-dropdown">
+              <a class = "navbar-item">Profile</a>
+              <a class = "navbar-item">Sign Out</a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id = "navbarExample" class = "navbar-menu">
-      </div>
     </nav>
+
+  <!-- NAVBAR -->
 
     <%= yield %>
   </body>
