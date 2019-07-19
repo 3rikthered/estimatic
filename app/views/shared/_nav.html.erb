@@ -1,0 +1,28 @@
+
+<nav class="navbar is-success is-fixed-top has-box-shadow">
+
+  <div class = "navbar-brand">
+    <a href = "#" class = "navbar-item is-size-4 has-text-white">estima.tic</a>
+  </div>
+
+  <div class = "navbar-menu">
+    <div class = "navbar-end">
+      <div class = "navbar-item has-dropdown is-hoverable">
+        <a class = "navbar-link">Menu</a>
+        <div class = "navbar-dropdown">
+          <a class = "navbar-item">
+            <%= link_to "Profile", edit_user_registration_path %>
+          </a>
+          <a class = "navbar-item">
+            <%= link_to "Sign In", new_user_registration_path %>
+          </a>
+          <hr class="dropdown-divider">
+          <a class = "navbar-item">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</nav>
