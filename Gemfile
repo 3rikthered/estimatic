@@ -40,6 +40,8 @@ gem 'simple_form', '~> 4.1'
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.6', '>= 4.6.2'
 
+gem 'pickadate-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

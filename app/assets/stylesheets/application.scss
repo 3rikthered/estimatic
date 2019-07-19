@@ -12,73 +12,17 @@
  *
  *= require_tree .
  *= require_self
+ *= require pickadate/default
+ *= require pickadate/default.date
  */
 
+
+
+// External libraries
 @import "bulma";
+@import "pickadate/default";
+@import "pickadate/default.date";
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-  background-color: hsl(0, 0%, 14%);
-}
-
-.opacity-1 {
-  opacity: 0.8;
-}
-
-.has-box-shadow {
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
-}
-
-.sidebar-padding-x {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-}
-
-.sidebar-padding-y {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 200px;
-  z-index: 10;
-  background-color: transparent;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.48);
-}
-
-.project-title {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 200px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.48);
-}
-
-/*
-* PADDING STYLES
-*/
-
-.login-padding {
-  padding-top: 200px;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-bottom: 200px;
-}
-
-.project-padding {
-  padding-top: 60px;
-  padding-left: 200px;
-}
-
-.description-padding {
-  padding-left: 40px;
-  padding-right: 40px;
-}
+// CSS partials
+@import "shared";
+@import "projects/sidebar";

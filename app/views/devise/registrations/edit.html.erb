@@ -1,35 +1,59 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+<div class = "login-padding">
+  <div class = "form-inputs">
+    <div class = "box has-background-dark ">
+      <div class = "control">
+        <p class = "has-text-centered has-text-success has-small-margin">Email</p>
+        <div class = "field">
+          <input class = "input is-success has-background-dark has-text-white" type = "email">
+          <%= f.input :email, required: true, autofocus: true %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class = "control">
+        <p class = "has-text-centered has-text-success has-small-margin"> New Password</p>
+        <input class = "input is-success has-background-dark has-text-white" type = "password">
+        <%= f.input :password,
+                    hint: "leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class = "control">
+        <p class = "has-text-centered has-text-success has-small-margin">Confirm New Password</p>
+        <input class = "input is-success has-background-dark has-text-white" type = "password">
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class = "control">
+        <p class = "has-text-centered has-text-success has-small-margin">Current Password</p>
+        <input class = "input is-success has-background-dark has-text-white" type = "password">
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
+      <span>
+        <div class = "buttons are-medium has-medium-margin">
+          <button class = "button is-success">
+            <div class = "form-actions">
+              <p class = "is-size-6"><%= f.button :submit, "Confirm Changes" %></p>
+            </div>
+          </button>
+          <button class = "button is-success">
+            <p class = "is-size-6"><%= link_to "Cancel", :back %></p>
+          </button>
+          <button class = "button is-danger">
+            <p class = "is-size-6"><%= link_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+          </button>
+        </div>
+      </span>
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

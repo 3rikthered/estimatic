@@ -3,24 +3,44 @@
 
 <div class = "login-padding">
   <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+    <div class = "box has-background-dark ">
+      <div class = "control">
+        <p class = "has-text-centered has-text-success has-small-margin">Email</p>
+        <div class = "field">
+          <input class = "input is-success has-background-dark has-text-white" type = "email">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+        </div>
+      </div>
+      <div class = "control">
+        <p class = "has-text-centered has-text-success has-small-margin"> Password</p>
+        <input class = "input is-success has-background-dark has-text-white" type = "password">
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class = "control">
+        <p class = "has-text-centered has-text-success has-small-margin">Confirm Password</p>
+        <input class = "input is-success has-background-dark has-text-white" type = "password">
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <span>
+        <div class = "buttons are-medium has-medium-margin">
+          <button class = "button is-success">
+            <div class = "form-actions">
+              <p class = "is-size-6"><%= f.button :submit, "Sign up" %></p>
+            </div>
+          </button>
+          <%= render "devise/shared/links" %>
+        </div>
+      </span>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-
 </div>
+
+<% end %>

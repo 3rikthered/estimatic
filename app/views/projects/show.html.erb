@@ -5,23 +5,21 @@
     <div class = "box has-background-dark">
       <div class = "content">
         <h1 class = "title is-5 has-text-success has-text-weight-light">
-          Project Description
+          Project Description:
         </h1>
-        <p class = "has-text-success has-text-weight-light">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <p class = "has-text-success is-italic">
+          <%= @project.description %>
         </p>
       </div>
     </div>
   </div>
 
 
-<nav class="navbar has-background-black-ter is-fixed-bottom has-box-shadow">
+<nav class="navbar has-background-black-ter is-fixed-bottom">
   <div class = "navbar-end">
-    <h1 class = "navbar-item is-size-3 has-text-success has-text-weight-light has-text-centered">
-      <%= @project.project %>
+    <h1 class = "navbar-item is-size-2 is-italic has-text-success has-text-weight-light">
+      <%= @project.project %> | owned by <%= @project.user.email %>
     </h1>
-  </div>
-  <div class = "navbar-end">
     <div class = buttons are-small">
       <button class = "button is-success is-outlined">
         <%= link_to 'Back', projects_path %>

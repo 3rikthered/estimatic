@@ -1,6 +1,6 @@
 <%= form_with(model: project, local: true) do |form| %>
   <% if project.errors.any? %>
-    <div id="error_explanation">
+    <div id = "error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
       <ul>
@@ -11,12 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :project %>
-    <%= form.text_area :project %>
-  </div>
+<section class = "setion">
+  <div class = "project-padding">
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class = "container">
+      <p class = "is-size-5 has-text-success">
+        Project Name <%= form.text_area :project %>
+      </p>
+      <br>
+      <p class = "is-size-5 has-text-success">
+        Description <%= form.text_area :project %>
+      </p>
+      <br>
+      <p class = "is-size-5 has-text-success">
+        Start Date
+        <%= text_field_tag(:date, value = nil, html_options = {class: 'form-control datepicker', placeholder: 'mm/dd/yyyy' }) %>
+      </p>
+      <br>
+      <div class = "actions">
+        <button class = "button is-success">
+          <%= form.submit %>
+        </button>
+        <button class = "button is-success">
+          <%= link_to 'Back', projects_path %>
+        </button>
+      </div>
+    </div>
   </div>
+</section>
+
 <% end %>
