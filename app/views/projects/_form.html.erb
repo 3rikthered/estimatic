@@ -20,12 +20,12 @@
       </p>
       <br>
       <p class = "is-size-5 has-text-success">
-        Description <%= form.text_area :project %>
+        Description <%= form.text_area :description %>
       </p>
       <br>
       <p class = "is-size-5 has-text-success">
         Start Date
-        <%= text_field_tag(:date, value = nil, html_options = {class: 'form-control datepicker', placeholder: 'mm/dd/yyyy' }) %>
+        <%= form.date_field :startdate %>
       </p>
       <br>
       <div class = "actions">
