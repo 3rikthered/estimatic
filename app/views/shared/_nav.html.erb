@@ -2,7 +2,7 @@
 <nav class="navbar is-success is-fixed-top has-box-shadow">
 
   <div class = "navbar-brand">
-    <a href = "#" class = "navbar-item is-size-4 has-text-white">estima.tic</a>
+    <%= link_to 'estima.tic', projects_path, class: 'navbar-item is-size-4 has-text-white' %>
   </div>
 
   <% if user_signed_in? %>

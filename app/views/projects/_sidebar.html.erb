@@ -6,75 +6,94 @@
         <aside class="menu">
           <br><br>
           <p class="menu-label is-size-6">Projects</p>
-
-          <ul class="menu-list">
-            <li>
-              <div class="navbar-menu">
-                <div class="navbar-item sidebar-item has-dropdown is-dark is-hoverable has-box-shadow">
-                  <a class="navbar-link has-text-grey">Owned</a>
-                  <div class="navbar-dropdown has-background-dark has-box-shadow">
+          <%= link_to 'New Project', new_project_path, class: 'button sidebar-item is-success opacity-1 has-text-white has-box-shadow' %>
+          <br>
+          <br>
+          <div class="columns">
+            <div class="column sidebar-column-margin">
+              <div class="dropdown is-hoverable">
+                <div class="dropdown-trigger">
+                  <button class="button sidebar-column-button-width has-box-shadow is-dark has-text-grey">
+                    <span>Owned</span>
+                  </button>
+                </div>
+                <div class="dropdown-menu">
+                  <div class="dropdown-content sidebar-column-button-width has-background-dark">
                     <% @projects.each do |project| %>
                       <% if project.user == current_user %>
-                        <%= link_to project.project, project, class: 'button sidebar-item is-dark has-text-grey has-text-left' %>
+                        <%= link_to project.project, project, class: 'dropdown-item has-text-grey has-text-left' %>
                       <% end %>
                     <% end %>
                   </div>
                 </div>
               </div>
-            </li>
-            <br>
-            <li>
-              <div class="navbar-menu">
-                <div class="navbar-item sidebar-item has-dropdown is-dark is-hoverable has-box-shadow">
-                  <a class="navbar-link has-text-grey">Member</a>
-                  <div class="navbar-dropdown has-background-dark has-box-shadow">
-                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Project 1</button>
-                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Project 2</button>
-                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Project 3</button>
-                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Project 4</button>
+            </div>
+            <div class="column">
+              <div class="dropdown is-hoverable">
+                <div class="dropdown-trigger">
+                  <button class="button sidebar-column-button-width has-box-shadow is-dark has-text-grey">
+                    <span>Member</span>
+                  </button>
+                </div>
+                <div class="dropdown-menu">
+                  <div class="dropdown-content sidebar-column-button-width has-background-dark">
+                    <% @projects.each do |project| %>
+                      <% if project.user == current_user %>
+                        <%= link_to project.project, project, class: 'dropdown-item has-text-grey has-text-left' %>
+                      <% end %>
+                    <% end %>
                   </div>
                 </div>
               </div>
-            </li>
-            <br>
-            <li>
-              <%= link_to 'New Project', new_project_path, class: 'button sidebar-item is-success opacity-1 has-text-white has-box-shadow' %>
-            </li>
-          </ul>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
           <br>
           <p class="menu-label is-size-6">Teams</p>
-          <ul class="menu-list">
-            <li>
-              <div class="navbar-menu">
-                <div class="navbar-item sidebar-item has-dropdown is-dark is-hoverable has-box-shadow">
-                  <a class="navbar-link has-text-grey">Owned</a>
-                  <div class="navbar-dropdown has-background-dark has-box-shadow">
-                    <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 1</button>
-                    <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 2</button>
-                    <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 3</button>
-                    <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 4</button>
+          <%= link_to 'New Team', new_project_path, class: 'button sidebar-item is-success opacity-1 has-text-white has-box-shadow' %>
+          <br>
+          <br>
+          <div class="columns">
+            <div class="column sidebar-column-margin">
+              <div class="dropdown is-hoverable">
+                <div class="dropdown-trigger">
+                  <button class="button sidebar-column-button-width has-box-shadow is-dark has-text-grey">
+                    <span>Owned</span>
+                  </button>
                 </div>
-              </div>
-            </li>
-            <br>
-            <li>
-              <div class="navbar-menu">
-                <div class="navbar-item sidebar-item has-dropdown is-dark is-hoverable has-box-shadow">
-                  <a class="navbar-link has-text-grey">Member</a>
-                  <div class="navbar-dropdown has-background-dark has-box-shadow">
-                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 1</button>
-                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 2</button>
-                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 3</button>
-                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 4</button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-content sidebar-column-button-width has-background-dark">
+                    <% @projects.each do |project| %>
+                      <% if project.user == current_user %>
+                        <%= link_to project.project, project, class: 'dropdown-item has-text-grey has-text-left' %>
+                      <% end %>
+                    <% end %>
                   </div>
                 </div>
               </div>
-            </li>
-            <br>
-            <li>
-              <button class="button sidebar-item is-success opacity-1 has-text-white has-text-left has-box-shadow">New Team</button>
-            </li>
-          </ul>
+            </div>
+            <div class="column">
+              <div class="dropdown is-hoverable">
+                <div class="dropdown-trigger">
+                  <button class="button sidebar-column-button-width has-box-shadow is-dark has-text-grey">
+                    <span>Member</span>
+                  </button>
+                </div>
+                <div class="dropdown-menu">
+                  <div class="dropdown-content sidebar-column-button-width has-background-dark">
+                    <% @projects.each do |project| %>
+                      <% if project.user == current_user %>
+                        <%= link_to project.project, project, class: 'dropdown-item has-text-grey has-text-left' %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </aside>
       </div>
     </div>
