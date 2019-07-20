@@ -5,35 +5,23 @@
   <div class = "form-inputs">
     <div class = "box has-background-dark ">
       <div class = "control">
-        <p class = "has-text-centered has-text-success has-small-margin">Email</p>
-        <div class = "field">
-          <input class = "input is-success has-background-dark has-text-white" type = "email">
           <%= f.input :email, required: true, autofocus: true %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
-        </div>
       </div>
       <div class = "control">
-        <p class = "has-text-centered has-text-success has-small-margin"> New Password</p>
-        <input class = "input is-success has-background-dark has-text-white" type = "password">
         <%= f.input :password,
-                    hint: "leave it blank if you don't want to change it",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
       </div>
       <div class = "control">
-        <p class = "has-text-centered has-text-success has-small-margin">Confirm New Password</p>
-        <input class = "input is-success has-background-dark has-text-white" type = "password">
         <%= f.input :password_confirmation,
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
       </div>
       <div class = "control">
-        <p class = "has-text-centered has-text-success has-small-margin">Current Password</p>
-        <input class = "input is-success has-background-dark has-text-white" type = "password">
         <%= f.input :current_password,
-                    hint: "we need your current password to confirm your changes",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
       </div>
