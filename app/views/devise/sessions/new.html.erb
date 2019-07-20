@@ -7,26 +7,15 @@
     <div class = "box has-background-dark ">
       <div class = "control">
         <div class = "field">
-          <%= f.input :email,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" } %>
+          <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
         </div>
       </div>
       <div class = "control">
-        <%= f.input :password,
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
       </div>
-      <span>
-        <div class = "buttons are-medium has-medium-margin">
-          <button class = "button is-success">
-            <div class = "form-actions">
-              <p class = "is-size-6"><%= f.button :submit, "Log in" %></p>
-            </div>
-          </button>
+        <div class = "form-actions">
+          <%= f.button :submit, "Log in", class: 'button is-success' %>
         </div>
-      </span>
     </div>
 
 <%= render "devise/shared/links" %>
