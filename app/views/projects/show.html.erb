@@ -21,16 +21,10 @@
       <%= @project.project %> | owned by <%= @project.user.name %>
     </h1>
     <div class = buttons are-small">
-      <button class = "button is-success is-outlined">
-        <%= link_to 'Back', projects_path %>
-      </button>
-      <button class = "button is-success is-outlined">
-        <%= link_to 'Edit', edit_project_path(@project) %>
-      </button>
-      <button class = "button is-success is-outlined">
-        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </button>
-      <p> </p>
+      <%= link_to 'Back', projects_path, class: 'button is-success is-outlined' %>
+      <%= link_to 'Edit', edit_project_path(@project), class: 'button is-success is-outlined' %>
+      <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-success is-outlined' %>
+      <br>
     </div>
   </div>
 </div>

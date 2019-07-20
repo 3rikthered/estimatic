@@ -1,4 +1,4 @@
-<%= form_with(model: project, local: true) do |form| %>
+<%= simple_form_for(@project) do |f| %>
   <% if project.errors.any? %>
     <div id = "error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -11,33 +11,36 @@
     </div>
   <% end %>
 
-<section class = "setion">
-  <div class = "project-padding">
 
-    <div class = "container">
-      <p class = "is-size-5 has-text-success">
-        Project Name <%= form.text_area :project %>
-      </p>
-      <br>
-      <p class = "is-size-5 has-text-success">
-        Description <%= form.text_area :description %>
-      </p>
-      <br>
-      <p class = "is-size-5 has-text-success">
-        Start Date
-        <%= form.date_field :startdate %>
-      </p>
-      <br>
-      <div class = "actions">
-        <button class = "button is-success">
-          <%= form.submit %>
-        </button>
-        <button class = "button is-success">
-          <%= link_to 'Back', projects_path %>
-        </button>
+
+<div class = "project-padding">
+  <div class="form-inputs">
+    <div class="box has-background-dark">
+      <div class="control">
+        <div class="field">
+            <%= f.input :project, required: true, autofocus: true, input_html: {autocomplete: "Project Name"} %>
+        </div>
+      </div>
+      <div class="control">
+        <div class="field">
+            <%= f.input :description, required: true, autofocus: true, input_html: {autocomplete: "Project Description"} %>
+        </div>
+      </div>
+      <div class="control">
+        <div class="field">
+          <p class = "is-size-6 has-text-success">
+                  Start Date
+                  <%= f.date_field :startdate %>
+                </p>
+        </div>
       </div>
     </div>
+    <div class = "actions">
+        <%= f.button :submit, class: 'button is-success' %>
+        <%= link_to 'Back', projects_path, class: 'button is-success' %>
+    </div>
   </div>
-</section>
+</div>
+
 
 <% end %>

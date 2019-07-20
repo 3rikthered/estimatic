@@ -6,22 +6,19 @@
         <aside class="menu">
           <p class="menu-label is-size-4">estimat.ic</p>
 
-          <p class="menu-label is-size-6">name</p>
+          <p class="menu-label is-size-6">Welcome!</p>
           <p class="menu-label">My Projects</p>
           <ul class="menu-list">
             <% @projects.each do |project| %>
-            <li>
+            <li class="has-small-margin">
               <% if project.user == current_user %>
-                <button class = "button is-dark">
-                    <%= link_to project.project, project %>
-                </button>
+                    <%= link_to project.project, project, class: 'button is-dark has-text-grey has-text-left has-box-shadow' %>
               <% end %>
             </li>
             <% end %>
-            <li>
-              <button class = "button is-success opacity-1">
-                <%= link_to 'New Project', new_project_path %>
-              </button>
+            <li class="has-small-margin">
+              <%= link_to 'New Project', new_project_path, class: 'button is-success opacity-1 has-text-white has-text-left has-box-shadow' %>
+              <% # new_project_path %>
             </li>
           </ul>
           <p class="menu-label">Other Projects</p>

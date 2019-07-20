@@ -35,17 +35,11 @@
       </div>
       <span>
         <div class = "buttons are-medium has-medium-margin">
-          <button class = "button is-success">
             <div class = "form-actions">
-              <p class = "is-size-6"><%= f.button :submit, "Confirm Changes" %></p>
+              <%= f.button :submit, "Confirm Changes", class: 'button is-success has-box-shadow' %>
+              <%= link_to 'Back', projects_path, class: 'button is-success has-box-shadow' %>
+              <%= link_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'button is-danger has-box-shadow' %>
             </div>
-          </button>
-          <button class = "button is-success">
-            <p class = "is-size-6"><%= link_to "Cancel", :back %></p>
-          </button>
-          <button class = "button is-danger">
-            <p class = "is-size-6"><%= link_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-          </button>
         </div>
       </span>
     </div>
