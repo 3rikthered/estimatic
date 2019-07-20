@@ -6,8 +6,8 @@
         <aside class="menu">
           <p class="menu-label is-size-4">estimat.ic</p>
 
-          <p class="menu-label is-size-6">Welcome!</p>
-          <p class="menu-label">My Projects</p>
+          <p class="menu-label is-size-6">Projects</p>
+          <p class="menu-label">Owned</p>
           <ul class="menu-list">
             <% @projects.each do |project| %>
             <li class="has-small-margin">
@@ -18,14 +18,19 @@
             <% end %>
             <li class="has-small-margin">
               <%= link_to 'New Project', new_project_path, class: 'button is-success opacity-1 has-text-white has-text-left has-box-shadow' %>
-              <% # new_project_path %>
             </li>
           </ul>
-          <p class="menu-label">Other Projects</p>
+          <p class="menu-label">Member</p>
           <ul class="menu-list">
-            <li><a>Project 1</a></li>
-            <li><a>Project 2</a></li>
-            <li><a>Project 3</a></li>
+            <li class="has-small-margin"><button class = "button is-dark has-text-grey has-text-left has-box-shadow">Project 1</button></li>
+            <li class="has-small-margin"><button class = "button is-dark has-text-grey has-text-left has-box-shadow">Project 2</button></li>
+            <li class="has-small-margin"><button class = "button is-dark has-text-grey has-text-left has-box-shadow">Project 3</button></li>
+          </ul>
+          <p class="menu-label is-size-6">Teams</p>
+          <ul class="menu-list">
+            <li class="has-small-margin">
+              <button class="button is-success opacity-1 has-text-white has-text-left has-box-shadow">New Team</button>
+            </li>
           </ul>
         </aside>
       </div>

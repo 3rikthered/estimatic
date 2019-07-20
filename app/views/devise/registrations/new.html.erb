@@ -31,16 +31,11 @@
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
       </div>
-
-      <span>
-        <div class = "buttons are-medium has-medium-margin">
-          <button class = "button is-success">
-            <div class = "form-actions">
-              <p class = "is-size-6"><%= f.button :submit, "Sign up" %></p>
-            </div>
-          </button>
+      <div class = "buttons are-medium">
+        <div class = "form-actions">
+          <p class = "is-size-6"><%= f.button :submit, "Sign up", class: "button is-success" %></p>
         </div>
-      </span>
+      </div>
     </div>
 </div>
 
