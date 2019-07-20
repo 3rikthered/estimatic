@@ -7,6 +7,14 @@
   <div class="form-inputs">
     <div class = "box has-background-dark ">
       <div class = "control">
+        <div class = "field">
+          <%= f.input :name,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "name" } %>
+        </div>
+      </div>
+      <div class = "control">
         <%= f.input :email,
                     required: true,
                     autofocus: true,
