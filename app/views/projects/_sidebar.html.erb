@@ -4,32 +4,75 @@
     <div class="sidebar sidebar-padding-x has-background-dark">
       <div class = "menu-wrapper sidebar-padding-y">
         <aside class="menu">
-          <p class="menu-label is-size-4">estimat.ic</p>
-
+          <br><br>
           <p class="menu-label is-size-6">Projects</p>
-          <p class="menu-label">Owned</p>
+
           <ul class="menu-list">
-            <% @projects.each do |project| %>
-            <li class="has-small-margin">
-              <% if project.user == current_user %>
-                    <%= link_to project.project, project, class: 'button is-dark has-text-grey has-text-left has-box-shadow' %>
-              <% end %>
+            <li>
+              <div class="navbar-menu">
+                <div class="navbar-item sidebar-item has-dropdown is-dark is-hoverable has-box-shadow">
+                  <a class="navbar-link has-text-grey">Owned</a>
+                  <div class="navbar-dropdown has-background-dark has-box-shadow">
+                    <% @projects.each do |project| %>
+                      <% if project.user == current_user %>
+                        <%= link_to project.project, project, class: 'button sidebar-item is-dark has-text-grey has-text-left' %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
             </li>
-            <% end %>
-            <li class="has-small-margin">
-              <%= link_to 'New Project', new_project_path, class: 'button is-success opacity-1 has-text-white has-text-left has-box-shadow' %>
+            <br>
+            <li>
+              <div class="navbar-menu">
+                <div class="navbar-item sidebar-item has-dropdown is-dark is-hoverable has-box-shadow">
+                  <a class="navbar-link has-text-grey">Member</a>
+                  <div class="navbar-dropdown has-background-dark has-box-shadow">
+                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Project 1</button>
+                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Project 2</button>
+                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Project 3</button>
+                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Project 4</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <br>
+            <li>
+              <%= link_to 'New Project', new_project_path, class: 'button sidebar-item is-success opacity-1 has-text-white has-box-shadow' %>
             </li>
           </ul>
-          <p class="menu-label">Member</p>
-          <ul class="menu-list">
-            <li class="has-small-margin"><button class = "button is-dark has-text-grey has-text-left has-box-shadow">Project 1</button></li>
-            <li class="has-small-margin"><button class = "button is-dark has-text-grey has-text-left has-box-shadow">Project 2</button></li>
-            <li class="has-small-margin"><button class = "button is-dark has-text-grey has-text-left has-box-shadow">Project 3</button></li>
-          </ul>
+          <br>
           <p class="menu-label is-size-6">Teams</p>
           <ul class="menu-list">
-            <li class="has-small-margin">
-              <button class="button is-success opacity-1 has-text-white has-text-left has-box-shadow">New Team</button>
+            <li>
+              <div class="navbar-menu">
+                <div class="navbar-item sidebar-item has-dropdown is-dark is-hoverable has-box-shadow">
+                  <a class="navbar-link has-text-grey">Owned</a>
+                  <div class="navbar-dropdown has-background-dark has-box-shadow">
+                    <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 1</button>
+                    <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 2</button>
+                    <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 3</button>
+                    <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 4</button>
+                </div>
+              </div>
+            </li>
+            <br>
+            <li>
+              <div class="navbar-menu">
+                <div class="navbar-item sidebar-item has-dropdown is-dark is-hoverable has-box-shadow">
+                  <a class="navbar-link has-text-grey">Member</a>
+                  <div class="navbar-dropdown has-background-dark has-box-shadow">
+                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 1</button>
+                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 2</button>
+                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 3</button>
+                      <button class = "button sidebar-item is-dark has-text-grey has-text-left">Team 4</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <br>
+            <li>
+              <button class="button sidebar-item is-success opacity-1 has-text-white has-text-left has-box-shadow">New Team</button>
             </li>
           </ul>
         </aside>
