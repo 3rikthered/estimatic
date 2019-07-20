@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  worst: 1
+  best: 1
+  expected: 1
+
+two:
+  worst: 1
+  best: 1
+  expected: 1
