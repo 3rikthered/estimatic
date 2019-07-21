@@ -6,21 +6,25 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    @teams = Team.where('id = ?', current_user.team_id)
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @projects = Project.all
   end
 
   # GET /projects/new
   def new
     @project = current_user.projects.build
+    @team = Team.where('id = ?', current_user.team_id)
   end
 
   # GET /projects/1/edit
   def edit
     @project = Project.find(params[:id])
+    @teams = current_user.teams
   end
 
   # POST /projects
@@ -71,6 +75,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:project, :description, :startdate)
+      params.require(:project).permit(:project, :description, :startdate, :team_id)
     end
 end

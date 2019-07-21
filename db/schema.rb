@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_20_161745) do
-
-  create_table "estimates", force: :cascade do |t|
-    t.integer "worst"
-    t.integer "best"
-    t.integer "expected"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "project_id"
-  end
+ActiveRecord::Schema.define(version: 2019_07_21_020751) do
 
   create_table "projects", force: :cascade do |t|
     t.text "project"
@@ -29,6 +19,14 @@ ActiveRecord::Schema.define(version: 2019_07_20_161745) do
     t.integer "user_id"
     t.text "description"
     t.date "startdate"
+    t.integer "team_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_07_20_161745) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "team"
+    t.integer "team_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
