@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_21_020751) do
+ActiveRecord::Schema.define(version: 2019_07_23_000625) do
+
+  create_table "estimates", force: :cascade do |t|
+    t.integer "case_best"
+    t.integer "case_worst"
+    t.integer "case_expected"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "project_id"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.text "project"
@@ -29,6 +38,11 @@ ActiveRecord::Schema.define(version: 2019_07_21_020751) do
     t.integer "user_id"
   end
 
+  create_table "teams_users", id: false, force: :cascade do |t|
+    t.integer "team_id"
+    t.integer "user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -38,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_07_21_020751) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.integer "team"
+    t.string "team"
     t.integer "team_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

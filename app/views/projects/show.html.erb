@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= render "sidebar" %>
 
 <div class = "project-padding">
   <div class = "description-padding">
@@ -13,19 +12,37 @@
         </p>
       </div>
     </div>
-  </div>
 
-
-<nav class="navbar has-background-black-ter is-fixed-bottom">
-  <div class = "navbar-end">
-    <h1 class = "navbar-item is-size-2 is-italic has-text-grey has-text-weight-light">
-      <%= @project.project %> | owned by <%= @project.user.name %>
-    </h1>
-    <div class = buttons are-small">
-      <%= link_to 'Back', projects_path, class: 'button is-success' %>
-      <%= link_to 'Edit', edit_project_path(@project), class: 'button is-success' %>
-      <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-success is-danger' %>
-      <br>
+    <div class="coumns">
+      <div class="column">
+        <div class="box has-background-dark has-box-shadow">
+          <div class="content">
+            <h1 class="title is-5 has-text-grey has-text-weight-light">
+              Current Estimates <%= @project.estimates.count %>
+            </h1>
+            <p class="is-7 has-text-grey">
+              <%= render @project.estimates %>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
+
+  <nav class="navbar has-background-black-ter is-fixed-bottom">
+    <div class = "navbar-end">
+      <h1 class = "navbar-item is-size-2 is-italic has-text-grey has-text-weight-light">
+        <%= @project.project %> | owned by <%= @project.user.name %>
+      </h1>
+      <div class = buttons are-small">
+        <%= link_to 'Back', projects_path, class: 'button is-success' %>
+        <%= link_to 'Edit', edit_project_path(@project), class: 'button is-success' %>
+        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-success is-danger' %>
+        <br>
+      </div>
+    </div>
+  </nav>
+
 </div>
+</nav

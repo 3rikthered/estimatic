@@ -7,12 +7,10 @@
   <div class="form-inputs">
     <div class = "box has-background-dark ">
       <div class = "control">
-        <div class = "field">
-          <%= f.input :name,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "name" } %>
-        </div>
+        <%= f.input :name,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" } %>
       </div>
       <div class = "control">
         <%= f.input :email,
@@ -31,6 +29,7 @@
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
       </div>
+
       <div class = "buttons are-medium">
         <div class = "form-actions">
           <p class = "is-size-6"><%= f.button :submit, "Sign up", class: "button is-success" %></p>

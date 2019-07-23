@@ -1,13 +1,49 @@
-
 <%= simple_form_for(@team) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
+<div class="form-inputs">
+  <div class="box has-background-grey-dark has-box-shadow">
+    <div class="content">
+      <h2 class="title is-5 has-text-grey">Create Team</h2>
+    </div>
+
+    <div class="control">
+      <%= f.input :name,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "Team Name" } %>
+    </div>
+
+    <div class="content">
+      <h2 class="title is-5 has-text-grey">Add Users</h2>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <label class="label has-text-grey">Email</label>
+        <input type="text" class="input has-background-dark has-text-grey">
+      </div>
+    </div>
+
+    <input type="hidden" value="<%= user_id = current_user.id %>">
+
+    <div class="field">
+      <div class="control">
+        <button class="button is-success has-box-shadow">Add User</button>
+        <button class="button is-danger has-box-shadow">Remove</button>
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="field">
+    <div class="control">
+      <% if current_page?(new_team_path) %>
+        <button class="button is-large is-success has-box-shadow">Create Team</button>
+      <% else %>
+        <button class="button is-large is-success has-box-shadow">Save Team</button>
+      <% end %>
+    </div>
   </div>
+</div>
+
 <% end %>

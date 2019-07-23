@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  case_best: 1
+  case_worst: 1
+  case_expected: 1
+
+two:
+  case_best: 1
+  case_worst: 1
+  case_expected: 1
