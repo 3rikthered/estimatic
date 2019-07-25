@@ -13,16 +13,73 @@
       </div>
     </div>
 
-    <div class="coumns">
+    <div class="columns">
       <div class="column">
         <div class="box has-background-dark has-box-shadow">
           <div class="content">
             <h1 class="title is-5 has-text-grey has-text-weight-light">
-              Current Estimates <%= @project.estimates.count %>
+              Current Estimates: <%= @project.estimates.count %>
             </h1>
+            <div class="columns">
+              <div class="column">
+                <h2 class="title is-6 has-text-grey has-text-weight-light">
+                  Best Case:
+                  <%# @project.estimates.case_best.each do |estimate| %>
+                    <%# @case_best_total = 0 %>
+                    <%# %>
+                </h2>
+              </div>
+              <div class="column">
+                <h2 class="title is-6 has-text-grey has-text-weight-light">
+                  Expected Case:
+                  <%# @project.estimates.case_best.each do |estimate| %>
+                    <%# @case_best_total = 0 %>
+                    <%# %>
+                </h2>
+              </div>
+              <div class="column">
+                <h2 class="title is-6 has-text-grey has-text-weight-light">
+                  Worst Case:
+                  <%# @project.estimates.case_best.each do |estimate| %>
+                    <%# @case_best_total = 0 %>
+                    <%# %>
+                </h2>
+              </div>
+            </div>
             <p class="is-7 has-text-grey">
-              <%= render @project.estimates %>
+              <%#= render @project.estimates %>
             </p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="box has-background-dark has-box-shadow">
+          <div class="content">
+            <h1 class="title is-5 has-text-grey has-text-weight-light">
+              Your Estimates:
+            </h1>
+            <%#= render 'estimates/form', estimate: @estimate %>
+
+            <div class="columns">
+              <div class="column">
+                <h2 class="title is-6 has-text-grey has-text-weight-light">
+                  Best Case:
+
+                </h2>
+              </div>
+              <div class="column">
+                <h2 class="title is-6 has-text-grey has-text-weight-light">
+                  Expected Case:
+                </h2>
+              </div>
+              <div class="column">
+                <h2 class="title is-6 has-text-grey has-text-weight-light">
+                  Worst Case:
+                </h2>
+              </div>
+            </div>
+            <%= link_to 'New Estimate', new_estimate_path, class: 'button is-success is-large has-text-white has-box-shadow' %>
+
           </div>
         </div>
       </div>
@@ -45,4 +102,3 @@
   </nav>
 
 </div>
-</nav
