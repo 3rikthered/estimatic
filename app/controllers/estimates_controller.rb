@@ -15,7 +15,7 @@ class EstimatesController < ApplicationController
   # GET /estimates/new
   def new
     @project = Project.find(params[:project_id])
-    @estimate = Estimate.new
+    @estimate = @project.estimates.new
   end
 
   # GET /estimates/1/edit
@@ -28,13 +28,12 @@ class EstimatesController < ApplicationController
     @project = Project.find(params[:project_id])
     @estimate = @project.estimates.create(params[:estimate].permit(:estimate))
 
-    respond_to do |format|
-      if @estimate.save
-        redirect_to project_path(@project)
-      else
-        render :new
-      end
-    end
+    #respond_to do |format|
+        redirect_back(fallback_location: root_path)
+    #  else
+    #    render :new
+      #end
+    #end
   end
 
   # PATCH/PUT /estimates/1

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :projects
+  resources :projects do resources :estimates, only: [:new, :create] end
   resources :teams
   resources :estimates
 

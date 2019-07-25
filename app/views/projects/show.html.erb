@@ -17,7 +17,7 @@
       <div class="column">
         <div class="box has-background-dark has-box-shadow">
           <div class="content">
-            <h1 class="title is-5 has-text-grey has-text-weight-light">
+            <h1 class="title is-4 has-text-grey has-text-weight-light">
               Current Estimates: <%= @project.estimates.count %>
             </h1>
             <div class="columns">
@@ -55,36 +55,14 @@
       <div class="column">
         <div class="box has-background-dark has-box-shadow">
           <div class="content">
-            <h1 class="title is-5 has-text-grey has-text-weight-light">
-              Your Estimates:
+            <h1 class="title is-4 has-text-grey has-text-weight-light">
+              Submit Estimates:
             </h1>
-            <%#= render 'estimates/form', estimate: @estimate %>
-
-            <div class="columns">
-              <div class="column">
-                <h2 class="title is-6 has-text-grey has-text-weight-light">
-                  Best Case:
-
-                </h2>
-              </div>
-              <div class="column">
-                <h2 class="title is-6 has-text-grey has-text-weight-light">
-                  Expected Case:
-                </h2>
-              </div>
-              <div class="column">
-                <h2 class="title is-6 has-text-grey has-text-weight-light">
-                  Worst Case:
-                </h2>
-              </div>
-            </div>
-            <%= link_to 'New Estimate', new_estimate_path, class: 'button is-success is-large has-text-white has-box-shadow' %>
-
+            <%= render 'estimates/form', estimate: @estimate %>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
   <nav class="navbar has-background-black-ter is-fixed-bottom">
@@ -100,5 +78,4 @@
       </div>
     </div>
   </nav>
-
 </div>

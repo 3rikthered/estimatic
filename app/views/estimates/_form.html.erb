@@ -1,26 +1,28 @@
-<%= simple_form_for(estimate) do |f| %>
+<%= simple_form_for([@project, @estimate]) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="project-padding">
-    <div class="box has-box-shadow has-background-dark">
+  <div class="columns">
+    <div class="column">
       <div class="form-inputs">
-        <%= f.input :case_best, required: true, autofocus: true, input_html: {autocomplete: "Best Case"} %>
+        <p class="has-text-grey">Worst Case:</p>
+        <%= f.input_field :case_worst, required: true, autofocus: true, class:'input is-danger has-background-dark has-text-grey' %>
       </div>
-
+    </div>
+    <div class="column">
       <div class="form-inputs">
-        <%= f.input :case_worst, required: true, autofocus: true, input_html: {autocomplete: "Best Case"} %>
+        <p class="has-text-grey">Expected Case:</p>
+        <%= f.input_field :case_expected, required: true, autofocus: true, class:'input is-warning has-background-dark has-text-grey' %>
       </div>
-
+    </div>
+    <div class="column">
       <div class="form-inputs">
-        <%= f.input :case_expected, required: true, autofocus: true, input_html: {autocomplete: "Best Case"} %>
-      </div>
-
-        <div class="content">
-          <%= f.button :submit, class: 'button is-success has-box-shadow' %>
-          <%= link_to 'Back', projects_path, class: 'button is-danger has-box-shadow' %>
-        </div>
+        <p class="has-text-grey">Best Case:</p>
+        <%= f.input_field :case_best, required: true, autofocus: true, class:'input is-success has-background-dark has-text-grey' %>
+        <p> </p>
+        <%= f.button :submit, class: 'button is-medium is-success has-box-shadow' %>
       </div>
     </div>
   </div>
+
 <% end %>
