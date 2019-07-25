@@ -22,8 +22,10 @@
 @import "pickadate/default.date";
 
 // CSS partials
-@import "projects/sidebar";
 @import "shared";
-@import "projects/sidebar";
+@import "sidebar";
 @import "simple_form";
 @import "notifications";
+
+@import "estimates";
+@import "projects";

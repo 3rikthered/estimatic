@@ -5,10 +5,10 @@
     <div class = "box has-background-dark has-box-shadow">
       <div class = "content">
         <h1 class = "title is-5 has-text-grey has-text-weight-light">
-          Starts on: <%= @project.startdate %>
+          Starts on: <%= @uniqe_project.startdate %>
         </h1>
         <p class = "is-7 has-text-grey">
-          <%= @project.description %>
+          <%= @uniqe_project.description %>
         </p>
       </div>
     </div>
@@ -18,37 +18,49 @@
         <div class="box has-background-dark has-box-shadow">
           <div class="content">
             <h1 class="title is-4 has-text-grey has-text-weight-light">
-              Current Estimates: <%= @project.estimates.count %>
+              Current Estimates: <%= @uniqe_project.estimates.count %>
             </h1>
             <div class="columns">
               <div class="column">
                 <h2 class="title is-6 has-text-grey has-text-weight-light">
                   Best Case:
-                  <%# @project.estimates.case_best.each do |estimate| %>
-                    <%# @case_best_total = 0 %>
-                    <%# %>
+                  <br>
+                  <% average = 0 %>
+                  <% @total_estimates.each do |estimate| %>
+                    <% if estimate.project_id == @uniqe_project.id %>
+                      <% average += estimate.case_best / @uniqe_project.estimates.count %>
+                    <% end %>
+                  <% end %>
+                  <%= average %>
                 </h2>
               </div>
               <div class="column">
                 <h2 class="title is-6 has-text-grey has-text-weight-light">
                   Expected Case:
-                  <%# @project.estimates.case_best.each do |estimate| %>
-                    <%# @case_best_total = 0 %>
-                    <%# %>
+                  <br>
+                  <% average = 0 %>
+                  <% @total_estimates.each do |estimate| %>
+                    <% if estimate.project_id == @project.id %>
+                      <% average += estimate.case_expected / @uniqe_project.estimates.count %>
+                    <% end %>
+                  <% end %>
+                  <%= average %>
                 </h2>
               </div>
               <div class="column">
                 <h2 class="title is-6 has-text-grey has-text-weight-light">
                   Worst Case:
-                  <%# @project.estimates.case_best.each do |estimate| %>
-                    <%# @case_best_total = 0 %>
-                    <%# %>
+                  <br>
+                  <% average = 0 %>
+                  <% @total_estimates.each do |estimate| %>
+                    <% if estimate.project_id == @uniqe_project.id %>
+                      <% average += estimate.case_worst / @uniqe_project.estimates.count %>
+                    <% end %>
+                  <% end %>
+                  <%= average %>
                 </h2>
               </div>
             </div>
-            <p class="is-7 has-text-grey">
-              <%#= render @project.estimates %>
-            </p>
           </div>
         </div>
       </div>
@@ -68,12 +80,12 @@
   <nav class="navbar has-background-black-ter is-fixed-bottom">
     <div class = "navbar-end">
       <h1 class = "navbar-item is-size-2 is-italic has-text-grey has-text-weight-light">
-        <%= @project.project %> | owned by <%= @project.user.name %>
+        <%= @uniqe_project.project %> | owned by <%= @uniqe_project.user.name %>
       </h1>
       <div class = buttons are-small">
         <%= link_to 'Back', projects_path, class: 'button is-success' %>
-        <%= link_to 'Edit', edit_project_path(@project), class: 'button is-success' %>
-        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-success is-danger' %>
+        <%= link_to 'Edit', edit_project_path(@uniqe_project), class: 'button is-success' %>
+        <%= link_to 'Destroy', @uniqe_project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-success is-danger' %>
         <br>
       </div>
     </div>

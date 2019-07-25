@@ -26,7 +26,7 @@ class EstimatesController < ApplicationController
   # POST /estimates.json
   def create
     @project = Project.find(params[:project_id])
-    @estimate = @project.estimates.create(params[:estimate].permit(:estimate))
+    @estimate = @project.estimates.create(params[:estimate].permit(:estimate, :case_best, :case_worst, :case_expected))
 
     #respond_to do |format|
         redirect_back(fallback_location: root_path)
@@ -70,6 +70,6 @@ class EstimatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def estimate_params
-      params.fetch(:estimate, {})
+      params.require(:estimate).permit(:estimate, :case_best, :case_worst, :case_expected)
     end
 end

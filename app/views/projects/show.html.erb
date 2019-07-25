@@ -24,25 +24,40 @@
               <div class="column">
                 <h2 class="title is-6 has-text-grey has-text-weight-light">
                   Best Case:
-                  <%# @project.estimates.case_best.each do |estimate| %>
-                    <%# @case_best_total = 0 %>
-                    <%# %>
+                  <br>
+                  <% average = 0 %>
+                  <% @total_estimates.each do |estimate| %>
+                    <% if estimate.project_id == @project.id %>
+                      <% average += estimate.case_best / @project.estimates.count %>
+                    <% end %>
+                  <% end %>
+                  <%= average %>
                 </h2>
               </div>
               <div class="column">
                 <h2 class="title is-6 has-text-grey has-text-weight-light">
                   Expected Case:
-                  <%# @project.estimates.case_best.each do |estimate| %>
-                    <%# @case_best_total = 0 %>
-                    <%# %>
+                  <br>
+                  <% average = 0 %>
+                  <% @total_estimates.each do |estimate| %>
+                    <% if estimate.project_id == @project.id %>
+                      <% average += estimate.case_expected / @project.estimates.count %>
+                    <% end %>
+                  <% end %>
+                  <%= average %>
                 </h2>
               </div>
               <div class="column">
                 <h2 class="title is-6 has-text-grey has-text-weight-light">
                   Worst Case:
-                  <%# @project.estimates.case_best.each do |estimate| %>
-                    <%# @case_best_total = 0 %>
-                    <%# %>
+                  <br>
+                  <% average = 0 %>
+                  <% @total_estimates.each do |estimate| %>
+                    <% if estimate.project_id == @project.id %>
+                      <% average += estimate.case_worst / @project.estimates.count %>
+                    <% end %>
+                  <% end %>
+                  <%= average %>
                 </h2>
               </div>
             </div>

@@ -6,30 +6,38 @@
 
   <div class="form-inputs">
     <div class = "box has-background-dark ">
+      <h2 class="is-size-5 has-text-grey">Name:</h2>
       <div class = "control">
-        <%= f.input :name,
+        <%= f.input_field :name,
                     required: false,
                     autofocus: true,
-                    input_html: { autocomplete: "name" } %>
+                    input_html: { autocomplete: "name" },
+                    class: "input is-success has-background-dark has-text-grey" %>
       </div>
+      <h2 class="is-size-5 has-text-grey">Email:</h2>
       <div class = "control">
-        <%= f.input :email,
+        <%= f.input_field :email,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email" }%>
+                    input_html: { autocomplete: "email" },
+                    class: "input is-success has-background-dark has-text-grey" %>
       </div>
+      <h2 class="is-size-5 has-text-grey">Password:</h2>
       <div class = "control">
-        <%= f.input :password,
+        <%= f.input_field :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { autocomplete: "new-password" },
+                    class: "input is-success has-background-dark has-text-grey" %>
       </div>
+      <h2 class="is-size-5 has-text-grey">Confirm Password:</h2>
       <div class = "control">
-        <%= f.input :password_confirmation,
+        <%= f.input_field :password_confirmation,
                     required: true,
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { autocomplete: "new-password" },
+                    class: "input is-success has-background-dark has-text-grey" %>
       </div>
-
+      <br>
       <div class = "buttons are-medium">
         <div class = "form-actions">
           <p class = "is-size-6"><%= f.button :submit, "Sign up", class: "button is-success" %></p>
@@ -37,7 +45,7 @@
       </div>
     </div>
 </div>
-
+<br>
 <%= render "devise/shared/links" %>
 
 <% end %>
