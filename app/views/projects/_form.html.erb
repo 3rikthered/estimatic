@@ -4,28 +4,33 @@
 <div class = "project-padding">
   <div class="form-inputs">
     <div class="box has-background-dark">
-      <div class="control">
-        <div class="field">
-            <%= f.input :project, required: true, autofocus: true, input_html: {autocomplete: "Project Name"} %>
-        </div>
-      </div>
-      <div class="control">
-        <div class="field">
-            <%= f.input :description, required: true, autofocus: true, input_html: {autocomplete: "Project Description"} %>
-        </div>
-      </div>
-      <div class="control">
-        <div class="field">
-          <p class = "is-size-6 has-text-grey">
+      <div class="columns">
+        <div class="column">
+          <div class="control">
+            <h2 class="has-text-grey">Project Name:</h2>
+            <%= f.input_field :project, required: true, autofocus: true, input_html: {autocomplete: "Project Name"}, class: 'input is-success has-background-dark has-text-grey' %>
+          </div>
+          <div class="control">
+            <div class="field">
+              <p class = "has-text-grey">
                   Start Date
-                  <%= f.date_field :startdate %>
-                </p>
+                  <%= f.date_field :startdate, class: 'input is-success has-background-dark has-text-grey' %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="control">
+            <h2 class="has-text-grey">Project Description:</h2>
+            <%= f.input_field :description, required: true, autofocus: true, input_html: {autocomplete: "Project Description"}, class: 'textarea is-success has-background-dark has-text-grey' %>
+          </div>
         </div>
       </div>
     </div>
+
     <div class = "actions">
         <%= f.button :submit, class: 'button is-success' %>
-        <%= link_to 'Back', projects_path, class: 'button is-success' %>
+        <%= link_to 'Back', projects_path, class: 'button is-danger' %>
     </div>
   </div>
 </div>

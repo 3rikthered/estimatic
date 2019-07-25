@@ -2,16 +2,17 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<div class = "login-padding">
+<div class = "center">
   <div class="form-inputs">
     <div class = "box has-background-dark ">
-      <div class = "control">
-        <div class = "field">
-          <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
-        </div>
+      <div class = "control has-text-centered">
+        <h2 class="has-text-grey is-size-4 has-text-weight-light">Email</h2>
+        <%= f.input_field :email, required: false, autofocus: true, input_html: { autocomplete: "email" }, class: 'input is-success has-background-dark has-text-grey' %>
       </div>
-      <div class = "control">
-        <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+      <div class = "control has-text-centered">
+        <h2 class="has-text-grey is-size-4 has-text-weight-light">Password</h2>
+
+        <%= f.input_field :password, required: false, input_html: { autocomplete: "current-password" }, class: 'input is-success has-background-dark has-text-grey' %>
       </div>
       <div class = "form-actions">
         <%= f.button :submit, "Log in", class: 'button is-success' %>
